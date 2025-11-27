@@ -25,6 +25,7 @@ Originally created for a school project.  [Here's the repo](https://github.com/h
 * Support up to 3 characters to be shown at the same time (you can draw your character manually without using the built-in character drawing system if you want).
 * Character animation (Fade, Slide, Jump, Shake, etc).
 * Choice system and skip dialog.
+* Play music and sound effect.
 * UI (Text, Button, Input field, etc).
 * Page/scene transition.
 * Everything is drawn on a Canvas, you can create your own Canvas and attach it to your page/scene.
