@@ -18,6 +18,8 @@
 
 ### A simple and easy-to-use game engine for Visual Novel.
 
+Built in raw C++17 with no smart pointer shenanigans OwO.
+
 Originally created for a school project.  [Here's the repo](https://github.com/hrtsnam/UAS_SDA_PROJECT).
 
 ## Features
