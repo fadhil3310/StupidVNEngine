@@ -1,13 +1,19 @@
 
 # StupidVNEngine
 
-<div style="display:flex;">
-<img src="./docs/2.png">
-<img src="./docs/3.png">
-</div>
+<table>
+  <tr>
+    <td>
+      <img src="/docs/2.png">
+    </td>
+     <td>
+      <img src="/docs/3.png">
+    </td>
+  </tr>
+</table>
 
+<video src="https://github.com/user-attachments/assets/09bfcc9a-128f-4015-ab7e-d866ff7eeee5"></video>
 
-![Example video](/docs/doc_video.mp4)
 
 
 ### A simple and easy-to-use game engine for Visual Novel.
