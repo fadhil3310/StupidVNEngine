@@ -157,7 +157,7 @@ void SceneManager_GoToScene(SceneManager *sceneManager, int sceneNumber, SceneTr
 // Change the background of the scene
 void SceneManager_SetBackground(SceneManager *sceneMg, std::string filePath);
 
-// Add a dialog (person max 3, fill "persons" and "questions" with empty vector if you don't want to show any persons or questions)
+// Add a dialog (person max 3, fill "persons" and "questions" with empty vector if you don't want to show any person or question)
 void SceneManager_AddDialog(SceneManager *sceneMg, std::vector<DialogPerson> persons, std::vector<DialogQuestion> questions, std::string name, std::string message);
 // Same, but with a callback that will be called after the dialog has been closed
 void SceneManager_AddDialog(SceneManager *sceneMg, std::vector<DialogPerson> persons, std::vector<DialogQuestion> questions, std::string name, std::string message, std::function<void(Scene *)> onFinished, Scene *onFinishedParameter);
@@ -168,4 +168,5 @@ void SceneManager_PlayMusic(SceneManager *sceneMg, std::string filePath);
 void SceneManager_StopMusic(SceneManager *sceneMg);
 
 // Play a sound
+
 void SceneManager_PlaySound(SceneManager *sceneMg, std::string filePath);
