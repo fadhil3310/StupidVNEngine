@@ -18,17 +18,17 @@
 
 ### A simple and easy-to-use game engine for Visual Novel.
 
-Built in raw C++17 with no smart pointer shenanigans OwO.
+Built in raw C++17 without OOP and smart pointer shenanigans OwO.
 
 Originally created for a school project.  [Here's the repo](https://github.com/hrtsnam/UAS_SDA_PROJECT).
 
 ## Features
 
+* Graph-based scene management.
 * Support up to 3 characters to be shown at the same time (you can draw your character manually without using the built-in character drawing system if you want).
 * Character animation (Fade, Slide, Jump, Shake, etc).
-* Choice system and skip dialog.
-* Play music and sound effect.
 * UI (Text, Button, Input field, etc).
+* Play music and sound effect.
 * Page/scene transition.
 * Custom immediate-mode drawing per page/scene.
 
@@ -36,7 +36,7 @@ Originally created for a school project.  [Here's the repo](https://github.com/h
 
 ## How to Use
 
-Please refer to the repo i have attached above. Consider it as an example on how to use the engine.
+Please refer to the repo i have attached above. Consider it as an example on how to use the engine. The comments are in Indonesian though, so you may need to use a translator.
 
 ## Building
 
