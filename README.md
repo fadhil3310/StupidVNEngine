@@ -30,7 +30,6 @@ Originally created for a school project.  [Here's the repo](https://github.com/h
 * Play music and sound effect.
 * UI (Text, Button, Input field, etc).
 * Page/scene transition.
-* Everything is drawn on a Canvas, you can create your own Canvas and attach it to your page/scene.
 * Custom immediate-mode drawing per page/scene.
 
 > Please note that the window can't be resized and is fixed at 1000x550, unless if you modify the engine code of course.
