@@ -27,9 +27,4 @@ void Graph_Print(Graph *graph)
         }
         std::cout << std::endl;
     }
-} 
-
-// std::vector<int> Graph_GetConnectedScenes(Graph *graph, int sceneNumber)
-// {
-//     return graph->connections[sceneNumber];
-// }
+}

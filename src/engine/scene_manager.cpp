@@ -55,10 +55,6 @@ void SceneManager_GoToScene(SceneManager *sceneMg, int sceneNumber, SceneTransit
         sceneMg->isTransitioningScene = true;
         sceneMg->pendingScene = scene;
         sceneMg->sceneTransitionProgress = 0.0f;
-
-        // delete sceneMg->lastSceneCanvas;
-        // sceneMg->lastSceneCanvas = Canvas_Create();
-        // Canvas_Copy(sceneMg->lastSceneCanvas, sceneMg->currentScene->canvas);
     }
     else
     {

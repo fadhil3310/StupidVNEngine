@@ -21,6 +21,8 @@ add_executable(main
     src/utils.hpp
     src/umum.cpp
     src/scenes/scene.hpp
+    src/scenes/game/game.hpp
+    src/scenes/game/game.cpp
     src/pages/page.hpp
     src/engine/canvas.hpp
     src/engine/canvas.cpp
@@ -30,6 +32,10 @@ add_executable(main
     src/engine/page_manager.cpp
     src/engine/engine.hpp
     src/engine/engine.cpp
+    src/engine/scene_manager.hpp
+    src/engine/scene_manager.cpp
+    src/engine/graph.hpp
+    src/engine/graph.cpp
 )
 
 target_compile_features(main PRIVATE cxx_std_17)

@@ -6,10 +6,10 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include "../../engine/canvas.hpp"
-#include "../../engine/ui.hpp"
-#include "../../scenes/scene.hpp"
+#include "canvas.hpp"
+#include "ui.hpp"
 #include "graph.hpp"
+#include "../scenes/scene.hpp"
 
 struct Scene;
 struct Graph;
@@ -20,25 +20,25 @@ struct Graph;
 // ============================
 //
 
-// Posisi orang di dialognya
+// The character position in the dialog
 enum class DialogPersonPosition
 {
     Left,
     Center,
     Right
 };
-// Animasi orangnya
+// Character animation
 enum class DialogPersonAnimation
 {
-    None, // Gausah dikasih animasi
-    Slide, // Masuk geser dari kiri/kanan/bawah tergantung posisinya dimana
-    FadeIn, // Opacitynya 0 -> 1
-    FadeOut, // Opacitynya 1 -> 0
-    Shake, // Geter
-    Pop, // Loncat dikit
-    Joget, // Joget
+    None,
+    Slide,
+    FadeIn,
+    FadeOut,
+    Shake,
+    Pop,
+    Joget, // Translate: dance
 };
-// Data orangnya
+
 struct DialogPerson
 {
     std::string imageFilePath;
@@ -46,17 +46,14 @@ struct DialogPerson
     DialogPersonAnimation animation = DialogPersonAnimation::None;
 };
 
-// Data pertanyaan dialognya
 struct DialogQuestion
 {
     std::string question;
 
-    // Callback kalau question dijawab
     std::function<void(Scene *)> onAnswered;
     Scene *onAnsweredParameter;
 };
 
-// Data dialog
 struct Dialog
 {
     std::string name;
@@ -64,7 +61,6 @@ struct Dialog
     std::vector<DialogPerson> persons;
     std::vector<DialogQuestion> questions;
 
-    // Callback kalau dialog udah beres
     std::function<void(Scene *)> onFinished;
     Scene *onFinishedParameter;
 };
@@ -97,7 +93,7 @@ enum class SceneTransition
 {
     None,
     Fade,
-    FadeEnding
+    FadeEnding // Only for my game purpose, forgot what does it mean
 };
 
 enum class SceneManagerState
@@ -126,13 +122,11 @@ struct SceneManager
     SceneTransition sceneTransition = SceneTransition::None;
     bool isTransitioningScene = false;
     bool isPendingSceneHasEntered = false;
-    // Canvas *lastSceneCanvas = nullptr;
     float sceneTransitionProgress = 0.0f;
 
     sf::Texture *backgroundImage = nullptr;
 
     std::queue<Dialog *> dialogQueue;
-    // Dialogue* nowTalkingDialog = nullptr;
     bool isFirstDialog = true;
     float dialogAnimProgress = 0.f;
     float dialogAnimProgressStep = 0.05f;
@@ -141,7 +135,6 @@ struct SceneManager
     int dialogTextWaitTime = 4;
     float dialogAnimProgressAfterText = 0.f;
     bool dialogEnterKeyPressed = false;
-    // int dialogTextAnimProgressStep = 0;
 
     bool isSaveButtonClicked;
 
@@ -156,29 +149,23 @@ struct SceneManager
     }
 };
 
-// Buat SceneManager (jangan dipanggil dipanggil kecuali dari game.cpp)
+// Create SceneManager
 SceneManager *SceneManager_Create(std::string saveName, Graph *graph, Canvas *canvas, EngineWindow *engineWindow);
 
-// Pindah scene
+// Navigate to other scene (using the number of the scene in the graph)
 void SceneManager_GoToScene(SceneManager *sceneManager, int sceneNumber, SceneTransition transition);
-// Atur background scene
+// Change the background of the scene
 void SceneManager_SetBackground(SceneManager *sceneMg, std::string filePath);
 
-// Tambah dialog
+// Add a dialog (person max 3, fill "persons" and "questions" with empty vector if you don't want to show any persons or questions)
 void SceneManager_AddDialog(SceneManager *sceneMg, std::vector<DialogPerson> persons, std::vector<DialogQuestion> questions, std::string name, std::string message);
-// Tambah dialog (dengan callback ketika dialognya beres)
+// Same, but with a callback that will be called after the dialog has been closed
 void SceneManager_AddDialog(SceneManager *sceneMg, std::vector<DialogPerson> persons, std::vector<DialogQuestion> questions, std::string name, std::string message, std::function<void(Scene *)> onFinished, Scene *onFinishedParameter);
 
-// Main musik (kalau ada yang panggil ini tapi masih ada musik yang diplay, musiknya bakal langsung distop ya kids)
+// Play a music (If there's a music that is currently playing, the music will be stopped immediately)
 void SceneManager_PlayMusic(SceneManager *sceneMg, std::string filePath);
-// Stop musik
+// Stop music that is currently playing
 void SceneManager_StopMusic(SceneManager *sceneMg);
 
-// Main suara (bebas mau panggil berapa kali juga, ga kayak musik)
+// Play a sound
 void SceneManager_PlaySound(SceneManager *sceneMg, std::string filePath);
-
-// Tampilan log dialog
-void SceneManager_Log(SceneManager *sceneMg);
-
-// Tombol untuk membuka log dialog
-void SceneManager_LogButton(SceneManager *sceneMg);

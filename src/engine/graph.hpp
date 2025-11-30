@@ -3,7 +3,7 @@
 #include <vector>
 #include <list>
 
-#include "../../scenes/scene.hpp"
+#include "../scenes/scene.hpp"
 
 struct Scene;
 
