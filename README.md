@@ -1,16 +1,24 @@
 
 # StupidVNEngine
 
-<div style="display:flex;">
-<img src="./docs/2.png">
-<img src="./docs/3.png">
-</div>
+<table>
+  <tr>
+    <td>
+      <img src="/docs/2.png">
+    </td>
+     <td>
+      <img src="/docs/3.png">
+    </td>
+  </tr>
+</table>
 
+<video src="https://github.com/user-attachments/assets/09bfcc9a-128f-4015-ab7e-d866ff7eeee5"></video>
 
-![Example video](/docs/doc_video.mp4)
 
 
 ### A simple and easy-to-use game engine for Visual Novel.
+
+Built in raw C++17 with no smart pointer shenanigans OwO.
 
 Originally created for a school project.  [Here's the repo](https://github.com/hrtsnam/UAS_SDA_PROJECT).
 
@@ -19,9 +27,9 @@ Originally created for a school project.  [Here's the repo](https://github.com/h
 * Support up to 3 characters to be shown at the same time (you can draw your character manually without using the built-in character drawing system if you want).
 * Character animation (Fade, Slide, Jump, Shake, etc).
 * Choice system and skip dialog.
+* Play music and sound effect.
 * UI (Text, Button, Input field, etc).
 * Page/scene transition.
-* Everything is drawn on a Canvas, you can create your own Canvas and attach it to your page/scene.
 * Custom immediate-mode drawing per page/scene.
 
 > Please note that the window can't be resized and is fixed at 1000x550, unless if you modify the engine code of course.
