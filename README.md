@@ -14,6 +14,7 @@
 
 <video src="https://github.com/user-attachments/assets/09bfcc9a-128f-4015-ab7e-d866ff7eeee5"></video>
 
+> A demo from my school project, please ignore the piss-filtered AI generated images (muh uhh dall-e good)
 
 
 ### A simple and easy-to-use game engine for Visual Novel.
